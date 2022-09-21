@@ -1,26 +1,60 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  export default{
+    data: () => ({
+      contador :500,
+    }),
+    methods: {
+      saludar(){
+        console.log("Hola 4A | @");
+      },
+      incrementar() {
+        this.contador ++;
+      },
+      decrementar() {
+        this.contador --;
+      },
+      resetear() {
+        this.contador = 10;
+      },
+    }
+  };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+ 
+<template>
+  <h1>Adonay Garcia Trujillo 4°A </h1>
+  
+  <img src="./assets/logo.png" alt="Logo Vue" width="125" height="125">
+  <div class="container">
+    <small>
+      <h1>Hola desde Vue.Js</h1>
+    </small>
+  <hr>
+  <h2>Contador {{ contador }}</h2>
+  <button @click="incrementar()">+1</button>
+  <button @click="decrementar()">-1</button>
+  <button @click="resetear()">Reset</button>
+</div> 
+
+</template>
+
+<style scoped>
+  .container{
+    text-align: center;
+  }
+  small{
+    color: #666;
+  }
+  h1 {
+    font-weight: bolder;
+  }
+  h2{
+    font-size: 2.5rem;
+  }
+  button{
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 0px 8px;
+  }
+
 </style>
